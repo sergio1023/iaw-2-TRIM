@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 { background-color: yellowgreen;
+    color: black;
+    font-style: oblique;
+}
+span h1 {
+    background-color: blue;
+}
+span > h1 {
+        background-color: chartreuse;
+}
+
+div#cabecera{
+    background-color: black;
+    color: yellow;
+    width: 100%;
+    text-align: center;
+}
+.noticia {
+margin: 0;
+width: 500px;
+height: 300px;
+border: 2px solid black;
+}
+div > img {
+    width: 200px;
+    height: 150px;
+}
+div.noticia > img {
+    float: left;
+    margin: 3px;
+}
+footer {
+    float: left;
+}
