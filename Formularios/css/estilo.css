@@ -1,0 +1,11 @@
+label {
+    border: 2px solid black
+}
+
+.errorl { background-color: red ;
+
+}
+
+body {
+    background-image: url('../../../Descargas/imagen.jpg/');
+}

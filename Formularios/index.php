@@ -1,18 +1,59 @@
 <?php
 
 $bienvenido=true;
-$nombre='';
-$apellidos='';
-$edad_20_39='';
-$edad_40_59='';
-$edad_60_79='';
+$autor='';
+$libro='';
+$editorial='';
+$fechaa='';
+$fechav='';
+
+$errores= false;
+$error_autor = false;
+$error_libro = false;
+$error_editorial = false;
+$error_fechaa = false;
+$error_fechav = false;
 
 if(isset($_POST["enviar"])){
     $bienvenido=false;
-    $nombre=$_POST["nombre"];
-    $apellidos=$_POST["apellidos"];
+
+    $autor = (isset($_POST["autor"]))?$_POST["autor"]:'';
+    if(strlen($autor)<3){
+        $error_autor = true;
+    }
+
+    $libro = (isset($_POST["libro"]))?$_POST["libro"]:'';
+    if(strlen($libro)<3){
+        $error_libro = true;
+    }
+
+    $editorial = (isset($_POST["editorial"]))?$_POST["editorial"]:'';
+    if(strlen($editorial)<3){
+        $error_editorial = true;
+    }
+
+    $fechaa = (isset($_POST["fechaalquiler"]))?$_POST["fechaalquiler"]:'';
+    if(strlen($fechaa)<3){
+        $error_fechaa = true;
+    }
+
+    $fechav = (isset($_POST["fechavuelta"]))?$_POST["fechavuelta"]:'';
+    if(strlen($fechav)<'2021-01-01'){
+        $error_fechav = true;
+    }
+
+    $autor = (isset($_POST["autor"]))?$_POST["autor"]:'';
+    if(strlen($autor)<5){
+        $error_autor = true;
+    }
 
     if(isset($_POST["edad"])){
+        ${"edad".$_POST["edad"]}='checked';
+    }   
+
+    if($error_autor || $error_libro | $error_editorial | $error_edad || $error_fechaa || $error_fechav){
+        $errores = true;
+    }
         /*if($_POST["edad"]=="20-39") {
                 $edad_20_39='checked';
         }*/
@@ -26,14 +67,12 @@ if(isset($_POST["enviar"])){
         if($_POST["edad"]=="60-79") {
             $edad_60_79='checked';
         }*/
-        
+        /*
         $edad_20_39=($_POST["edad"]=="20_39")?'checked':'';
         $edad_40_59=($_POST["edad"]=="49_50")?'checked':'';
         $edad_60_79=($_POST["edad"]=="60_79")?'checked':'';
-        
-        ${"edad".$_POST["edad"]}='checked';
-    }   
-    }
+        */
+}
 
 
 /*
@@ -67,24 +106,33 @@ echo "SERVER:<br>";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo.css">
     <title>Formulario</title>
 </head>
 <body>
+    <h2><b>Los datos introducidos tienen errores</b></h2>
+    <?php
+
+
+    ?>
     <div>
         <form action="index.php" method="post">
             <fieldset>
-                <legend>Información Personal</legend>
-                <label for="nombre">Nombre:</label>
-                <input name="nombre" id="nombre" type="text" tabindex="1" value="<?=$nombre?>" />
-                <label for="apellidos">Apellidos:</label>
-                <input name="apellidos" id="apellidos" type="text" tabindex="2" value="<?=$apellidos?>" />
+                <legend>BIBLIOTECA</legend>
+                <label <?=($error_autor)?'class="errorl"':'';?> for="autor">Autor:</label>
+                <input <?=($error_autor)?'class="errorl"':'';?> name="autor" id="autor" type="text" tabindex="1" value="<?=$autor?>" />
+                <label <?=($error_libro)?'class="error"':'';?> for="libro">Libro:</label>
+                <input <?=($error_libro)?'class="background-error"':'';?> name="libro" id="libro" type="text" tabindex="2" value="<?=$libro?>"/>
+                <label <?=($error_editorial)?'class="error"':'';?> for="apellidos">Editorial:</label>
+                <input <?=($error_editorial)?'class="background-error"':'';?> name="apellidos" id="apellidos" type="text" tabindex="2" value="<?=$apellidos?>"/>
             </fieldset>
             <fieldset>
-                <legend>Edad</legend>
-                <label><input type="radio" tabindex="20" name="edad" value="20_39" <?=$edad_20_30?>/> 20-39</label>
-                <label><input type="radio" tabindex="21" name="edad" value="40_59" <?=$edad_40_59?>/> 40-59</label>
-                <label><input type="radio" tabindex="22" name="edad" value="60_79" <?=$edad_60_70?>/> 60-79</label>
-            </fieldset>
+                <legend>Fechas</legend>
+                <label <?=($error_autor)?'class="error"':'';?> for="fechaalquiler">Fecha Alquiler:</label>
+                <input <?=($error_autor)?'class="background-error"':'';?> name="fechaalquiler" id="fechaalquiler" type="date" tabindex="1" value="<?=$fechaa?>" />
+                <label <?=($error_autor)?'class="error"':'';?> for="fechavuelta">Fecha Vuelta:</label>
+                <input <?=($error_autor)?'class="background-error"':'';?> name="fechavuelta" id="fechavuelta" type="date" tabindex="1" value="<?=$fechav?>" />
+               </fieldset>
             <input type="submit" name="enviar" value="enviar">
         </form>
     </div>
