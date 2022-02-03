@@ -1,5 +1,9 @@
 body {
-    background-image: url('imagen.jpg');
+    background-image: url('formi.jpg');
+    background-repeat: no-repeat;
+    float: left;
+    height: 1200px;
+    width: 1600px;
 }
 
 label {
