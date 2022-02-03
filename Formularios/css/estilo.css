@@ -1,11 +1,26 @@
+body {
+    background-image: url('imagen.jpg');
+}
+
 label {
     border: 2px solid black
 }
 
-.errorl { background-color: red ;
+.errora { background-color: red ;
+
+}
+.errorl {background-color: black ;
 
 }
 
-body {
-    background-image: url('../../../Descargas/imagen.jpg/');
+.erorre { background-color: green ;
+
+}
+
+.errorfa { color: red;
+
+}
+
+.errorfv { color: red;
+
 }

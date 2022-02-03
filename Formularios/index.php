@@ -33,12 +33,12 @@ if(isset($_POST["enviar"])){
     }
 
     $fechaa = (isset($_POST["fechaalquiler"]))?$_POST["fechaalquiler"]:'';
-    if(strlen($fechaa)<3){
+    if(date($fechaa)<'2022-01-01'){
         $error_fechaa = true;
     }
 
     $fechav = (isset($_POST["fechavuelta"]))?$_POST["fechavuelta"]:'';
-    if(strlen($fechav)<'2021-01-01'){
+    if(date($fechav)<'2022-01-15'){
         $error_fechav = true;
     }
 
@@ -47,9 +47,9 @@ if(isset($_POST["enviar"])){
         $error_autor = true;
     }
 
-    if(isset($_POST["edad"])){
+   /* if(isset($_POST["edad"])){
         ${"edad".$_POST["edad"]}='checked';
-    }   
+    }*/   
 
     if($error_autor || $error_libro | $error_editorial | $error_edad || $error_fechaa || $error_fechav){
         $errores = true;
@@ -110,7 +110,7 @@ echo "SERVER:<br>";
     <title>Formulario</title>
 </head>
 <body>
-    <h2><b>Los datos introducidos tienen errores</b></h2>
+    <h2><b>Verifica si tienen errores</b></h2>
     <?php
 
 
@@ -119,19 +119,19 @@ echo "SERVER:<br>";
         <form action="index.php" method="post">
             <fieldset>
                 <legend>BIBLIOTECA</legend>
-                <label <?=($error_autor)?'class="errorl"':'';?> for="autor">Autor:</label>
-                <input <?=($error_autor)?'class="errorl"':'';?> name="autor" id="autor" type="text" tabindex="1" value="<?=$autor?>" />
-                <label <?=($error_libro)?'class="error"':'';?> for="libro">Libro:</label>
-                <input <?=($error_libro)?'class="background-error"':'';?> name="libro" id="libro" type="text" tabindex="2" value="<?=$libro?>"/>
-                <label <?=($error_editorial)?'class="error"':'';?> for="apellidos">Editorial:</label>
-                <input <?=($error_editorial)?'class="background-error"':'';?> name="apellidos" id="apellidos" type="text" tabindex="2" value="<?=$apellidos?>"/>
+                <label <?=($error_autor)?'class="errora"':'';?> for="autor">Autor:</label>
+                <input <?=($error_autor)?'class="errora"':'';?> name="autor" id="autor" type="text" tabindex="1" value="<?=$autor?>" />
+                <label <?=($error_libro)?'class="errorl"':'';?> for="libro">Libro:</label>
+                <input <?=($error_libro)?'class="errorl"':'';?> name="libro" id="libro" type="text" tabindex="2" value="<?=$libro?>"/>
+                <label <?=($error_editorial)?'class="errore"':'';?> for="apellidos">Editorial:</label>
+                <input <?=($error_editorial)?'class="errore"':'';?> name="apellidos" id="apellidos" type="text" tabindex="2" value="<?=$apellidos?>"/>
             </fieldset>
             <fieldset>
                 <legend>Fechas</legend>
-                <label <?=($error_autor)?'class="error"':'';?> for="fechaalquiler">Fecha Alquiler:</label>
-                <input <?=($error_autor)?'class="background-error"':'';?> name="fechaalquiler" id="fechaalquiler" type="date" tabindex="1" value="<?=$fechaa?>" />
-                <label <?=($error_autor)?'class="error"':'';?> for="fechavuelta">Fecha Vuelta:</label>
-                <input <?=($error_autor)?'class="background-error"':'';?> name="fechavuelta" id="fechavuelta" type="date" tabindex="1" value="<?=$fechav?>" />
+                <label <?=($error_autor)?'class="errorfa"':'';?> for="fechaalquiler">Fecha Alquiler:</label>
+                <input <?=($error_autor)?'class="errorfa"':'';?> name="fechaalquiler" id="fechaalquiler" type="date" tabindex="1" value="<?=$fechaa?>" />
+                <label <?=($error_autor)?'class="errorfv"':'';?> for="fechavuelta">Fecha Vuelta:</label>
+                <input <?=($error_autor)?'class="errorfv"':'';?> name="fechavuelta" id="fechavuelta" type="date" tabindex="1" value="<?=$fechav?>" />
                </fieldset>
             <input type="submit" name="enviar" value="enviar">
         </form>
