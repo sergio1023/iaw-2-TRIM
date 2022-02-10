@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,24 +8,35 @@
     <title>JAVASCRIPT SergioSec</title>
     <script type="text/javascript">
         // Declaramos variable
-            window.addEventListener("load",function(){
-                let boton
-                let numClick = 0
-                // declaramos la variable del boton y lo asociamos al id expresado en html
-                boton = document.getElementById("boton")
-                boton.addEventListener("click", function(){
-                     numClick = numClick + 1
-                    alert("Me has pulsado "  +  numClick +  " veces")
-                })
-             })
+        window.addEventListener("load", function () {
+            let boton
+            let numClick = 0
+            // declaramos la variable del boton y lo asociamos al id expresado en html
+            boton = document.getElementById("boton")
+            let salida = document.getElementById("salida")
+            // Asociar la ejecución de una función al evento click
+            boton.addEventListener("click", function () {
+                numClick = numClick + 1
+                if (numClick == 1) {
+                    salida.innerHTML = "Bienvenido!"
+                } else {
+                    salida.innerHTML = "Me has pulsado " + numClick + " veces "
+                }
+                // alert("Me has pulsado "  +  numClick +  " veces")}
+            })
+
+        })
 
         // Escribimos código en la página
         //document.writeln('Hola mundo JS ')
         // alert('Hola mundo')
     </script>
 </head>
+
 <body>
     <h1>Hooooola buenaaaas</h1>
-    <button id="boton">Púlsame </button>
+    <button id="boton">Púlsame </button> <br /><br />
+    <div id="salida">Salida botón</div><br /><br />
 </body>
+
 </html>
