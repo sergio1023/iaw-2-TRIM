@@ -8,9 +8,9 @@
 </head>
 <body>
     <?php
-    include("contador.php");
+        include("contador.php");
     ?>
-     <?php 
+    <?php 
     if($nvisita == 1) { ?>
     <p><h1>MUNDO</h1></p> 
     <?php } else { ?>

@@ -10,7 +10,6 @@
     <?php
        include("contador.php");
     ?>
-
     <?php 
     if($nvisita == 1) { ?>
     <p><h1>Hola</h1></p> 

@@ -7,8 +7,8 @@
     <title>Page3 SergioSec</title>
 </head>
 <body>
-<?php
-    include("contador.php");
+    <?php
+        include("contador.php");
     ?>
      <?php 
     if($nvisita == 1) { ?>

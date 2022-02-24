@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica1</title>
+        <script>
+            window.addEventListener("load",function(){
+
+                // Definimos variables de botones
+                let pulsasuma
+                let pulsaresta
+                let pulsamulti
+                let pulsadivi
+                let salida
+                let numero1
+                let numero2
+
+                // Asociamos os botones a las variables definidas
+                pulsasuma = document.getElementById("pulsasuma")
+                pulsaresta = document.getElementById("pulsaresta")
+                pulsamulti = document.getElementById("pulsamulti")
+                pulsadivi = document.getElementById("pulsadivi")
+                numero1 = document.getElementById("numero1")
+                numero2 = document.getElementById("numero2")
+                salida = document.getElementById("salida")
+
+                pulsasuma.addEventListener("click",function(){
+                                let numerovalor1 = numero1.value
+                                let numerovalor2 = numero2.value
+                                let numero1final = parseInt(numerovalor1)
+                                let numero2final = parseInt(numerovalor2)
+                                let final1 = numero1final + numero2final
+                                salida.innerHTML = final1
+                                
+                         })
+                pulsaresta.addEventListener("click",function(){
+                                let numerovalor1 = numero1.value
+                                let numerovalor2 = numero2.value
+                                let numero1final = parseInt(numerovalor1)
+                                let numero2final = parseInt(numerovalor2)
+                                let final1 = numero1final - numero2final
+                                salida.innerHTML = final1
+                          })
+                pulsamulti.addEventListener("click",function(){
+                    let numerovalor1 = numero1.value
+                                let numerovalor2 = numero2.value
+                                let numero1final = parseInt(numerovalor1)
+                                let numero2final = parseInt(numerovalor2)
+                                let final1 = numero1final * numero2final
+                                salida.innerHTML = final1
+                                
+                         })                 
+                pulsadivi.addEventListener("click",function(){
+                    let numerovalor1 = numero1.value
+                                let numerovalor2 = numero2.value
+                                let numero1final = parseInt(numerovalor1)
+                                let numero2final = parseInt(numerovalor2)
+                                let final1 = numero1final / numero2final
+                                salida.innerHTML = final1
+                                
+                         })
+
+            })
+        </script>
+</head>
+<body>
+    <h3>Dime un número</h3>
+    <input type="number" name="numero1" id="numero1">
+    <br/><br/>
+    <h3>Dime otro número</h3>
+    <input type="number" name="numero2" id="numero2"><br/></br>
+
+   
+        <button id="pulsasuma">SUMA</button>
+        <button id="pulsaresta">RESTA</button>
+        <button id="pulsamulti">MULTIPLICACIÓN</button>
+        <button id="pulsadivi">DIVISIÓN</button>
+
+         <h1><div id="salida">Esto es el resultado </div></h1>
+</body>
+</html>
