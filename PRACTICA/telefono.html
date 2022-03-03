@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="widtd=device-widtd, initial-scale=1.0">
+    <meta name="viewport" content="widbutton=device-widbutton, initial-scale=1.0">
     <title>Marcador de teléfono</title>
     <script>
-             window.addEventListener("load",function(){
+            window.addEventListener("load",function(){
                 let bot1
                 let bot2
                 let bot3
@@ -16,8 +16,65 @@
                 let bot7 
                 let bot8
                 let bot9
+                let bot0
+                let numclick = 0
+                let botreset
+                bot1 = document.getElementById("bot1")
+                bot2 = document.getElementById("bot2")
+                bot3 = document.getElementById("bot3")
+                bot4 = document.getElementById("bot4")
+                bot5 = document.getElementById("bot5")
+                bot6 = document.getElementById("bot6")
+                bot7 = document.getElementById("bot7")
+                bot8 = document.getElementById("bot8")
+                bot9 = document.getElementById("bot9")
+                bot0 = document.getElementById("bot0")
+                botreset = document.getElementById("reset")
 
-             })
+                  bot1.addEventListener("click",function(){
+                  
+                    salida.innerHTML = salida.innerHTML + 1
+                  })
+            
+                  bot2.addEventListener("click",function(){
+               
+                    salida.innerHTML = salida.innerHTML + 2
+                  })
+                  bot3.addEventListener("click",function(){
+                  
+                    salida.innerHTML = salida.innerHTML + 3
+                  })
+                  bot4.addEventListener("click",function(){
+                    salida.innerHTML = salida.innerHTML + 4
+                  })
+                  bot5.addEventListener("click",function(){
+                    salida.innerHTML = salida.innerHTML + 5
+                  })
+                  bot6.addEventListener("click",function(){
+                    salida.innerHTML = salida.innerHTML + 6
+                  })
+                  bot7.addEventListener("click",function(){
+                    salida.innerHTML = salida.innerHTML + 7
+                  })
+                  bot8.addEventListener("click",function(){
+                    salida.innerHTML = salida.innerHTML + 8
+                  })
+                  bot9.addEventListener("click",function(){
+                    salida.innerHTML = salida.innerHTML + 9
+                  })
+                  bot0.addEventListener("click",function(){
+                    salida.innerHTML = salida.innerHTML + 0
+                  })
+                  botreset.addEventListener("click",function(){
+                    salida.innerHTML = ""
+                  })
+                
+            })
+
+
+
+
+             
 
 
     </script>
@@ -27,31 +84,30 @@
     <table >
         
           <tr>
-            <td id="">1</td>
-            <td id="">2</td>
-            <td id="">3</td>
+            <td><button id="bot1">1</button></td>
+            <td><button id="bot2">2</button></td>
+            <td><button id="bot3">3</button></td>
           </tr>
         
 
           <tr>
-            <td >4</td>
-            <td >5</td>
-            <td >6</td>
+            <td><button id="bot4">4</button></td>
+            <td><button id="bot5">5</button></td>
+            <td><button id="bot6">6</button></td>
           </tr>
           <tr>
-            <td >7</td>
-            <td >8</td>
-            <td >9</td>
+            <td><button id="bot7">7</button></td>
+            <td><button id="bot8">8</button></td>
+            <td><button id="bot9">9</button></td>
           </tr>
           <tr>
-            <td >*</td>
-            <td >0</td>
-            <td >#</td>
+            <td><button >*</button></td>
+            <td><button id="bot0">0</button></td>
+            <td><button >#</button></td>
           </tr>
         
         </table>
-
-
-
+        <h1> <div id="salida"></div></h1>
+        <button id="reset">borrar</button>
 </body>
 </html>
